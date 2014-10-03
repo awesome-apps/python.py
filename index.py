@@ -1,76 +1,48 @@
-board = [0,1,2,3,4,5,6,7,8]
-xWin = 0
-oWin = 0
-def show():
-    print "_____________"
-    print '|',board[0],'|',board[1],'|',board[2],'|'
-    print "_____________"
-    print '|',board[3],'|',board[4],'|',board[5],'|'
-    print "_____________"
-    print '|',board[6],'|',board[7],'|',board[8],'|'
-    print "_____________"
-show()
-print "The Tic Tac Toe Board looks like the one above. Each square has a number which is a position. The program keeps providing inputs for the user to select that position. You both have a total of nine turns to beat your opponent. X starts the game. Good Luck!"
-turn = 1
-turns = 0
-while turns < 9:
-    pos = int(input("Enter a position"))
-    if pos >= 9:
-        print "You were supposed to enter out a number between zero and eight"
-    realTurn = turn%2
-    if realTurn == 0:
-        board[pos] = 'o'
-    else:
-        board[pos] = 'x'
-    print "You have %i turns left" % turn
-    show()
-    turns += 1
-    turn += 1
-    if board[0] == 'x' and board[1] == 'x' and board[2] == 'x':
-        print "X WINS"
-        break
-    elif board[3] == 'x' and board[4] == 'x' and board[5] == 'x':
-        print "X WINS"
-        break
-    elif board[6] == 'x' and board[7] == 'x' and board[8] == 'x':
-        print "X WINS"
-        break
-    elif board[0] == 'x' and board[3] == 'x' and board[6] == 'x':
-        print "X WINS"
-        break
-    elif board[1] == 'x' and board[4] == 'x' and board[7] == 'x':
-        print "X WINS"
-        break
-    elif board[2] == 'x' and board[5] == 'x' and board[8] == 'x':
-        print "X WINS"
-        break
-    elif board[0] == 'x' and board[4] == 'x' and board[8] == 'x':
-        print "X WINS"
-        break
-    elif board[2] == 'x' and board[4] == 'x' and board[6] == 'x':
-        print "X WINS"
-        break
-    if board[0] == 'o' and board[1] == 'o' and board[2] == 'o':
-        print "O WINS"
-        break
-    elif board[3] == 'o' and board[4] == 'o' and board[5] == 'o':
-        print "O WINS"
-        break
-    elif board[6] == 'o' and board[7] == 'o' and board[8] == 'o':
-        print "O WINS"
-        break
-    elif board[0] == 'o' and board[3] == 'o' and board[6] == 'o':
-        print "O WINS"
-        break
-    elif board[1] == 'o' and board[4] == 'o' and board[7] == 'o':
-        print "O WINS"
-        break
-    elif board[2] == 'o' and board[5] == 'o' and board[8] == 'o':
-        print "O WINS"
-        break
-    elif board[0] == 'o' and board[4] == 'o' and board[8] == 'o':
-        print "O WINS"
-        break
-    elif board[2] == 'o' and board[4] == 'o' and board[6] == 'o':
-        print "O WINS"
-        break
+#global data
+UIGridArray = [0,1,2,3,4,5,6,7,8]
+UIMessageArray = ["X IS THE WINNER", "O IS THE WINNER", "IT IS A DRAW", "X STARTS FIRST"]
+
+class UIViewController:
+    UIViewLine = "_______"
+    def UIGridView(self):
+        print(UIViewController.UIViewLine)
+        print("|" + str(UIGridArray[0]) + "|" + str(UIGridArray[1]) + "|" + str(UIGridArray[2]) + "|")
+        print(UIViewController.UIViewLine)
+        print("|" + str(UIGridArray[3]) + "|" + str(UIGridArray[4]) + "|" + str(UIGridArray[5]) + "|")
+        print(UIViewController.UIViewLine) 
+        print("|" + str(UIGridArray[6]) + "|" + str(UIGridArray[7]) + "|" + str(UIGridArray[8]) + "|")
+        print(UIViewController.UIViewLine) 
+UIView = UIViewController()
+class AppDelegate:
+    def UIInstruct(self):
+        print UIMessageArray[3]
+    def UIGame(self):
+        UIIteration = 9
+        UITurnManager = 0
+        while UIIteration > 0:
+            UITurnTester = UITurnManager%2
+            UIGridPosition = int(input("Enter a position"))
+            if UITurnTester == 0:
+                UIGridArray[UIGridPosition] = 'O'
+            else:
+                UIGridArray[UIGridPosition] = 'X'
+            UITurnManager += 1
+            UIView.UIGridView()
+            print(str(UITurnManager) + " turns are over")
+            UIIteration -=1
+            x = 0
+            y = x + 1
+            z = x + 2
+            a = x + 3
+            b = x + 4
+            c = 2
+            t = 3
+            while x<=6:
+                if UIGridArray[x] == 'X' and UIGridArray[y] == 'X' and UIGridArray[z] == 'X':
+                    break
+                    UIMessageArray[0]
+                x = x + 3
+                    
+UIApp = AppDelegate()
+UIApp.UIInstruct()
+UIApp.UIGame()
